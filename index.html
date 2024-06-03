@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аренда недвижимости</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Подбор аренды недвижимости</h1>
+    </header>
+    <main>
+        <form id="rental-form">
+            <div class="form-group">
+                <label for="location">Местоположение:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div class="form-group">
+                <label for="price-range">Диапазон цен:</label>
+                <input type="text" id="price-range" name="price-range" required>
+            </div>
+            <div class="form-group">
+                <label for="property-type">Тип недвижимости:</label>
+                <select id="property-type" name="property-type">
+                    <option value="apartment">Квартира</option>
+                    <option value="house">Дом</option>
+                    <option value="studio">Студия</option>
+                </select>
+            </div>
+            <button type="submit">Найти</button>
+        </form>
+        <section id="results">
+            <h2>Результаты поиска</h2>
+            <div id="listings">
+                <!-- Здесь будут отображаться результаты поиска -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Аренда недвижимости</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
