@@ -11,6 +11,11 @@
   left: 100px;
 }
 
+.rectangle .img{
+  position: relative;
+  top: 330px;
+  left: 100px;}
+
 .rectangle .overlap {
   position: absolute;
   width: 348px;
@@ -57,6 +62,7 @@
   left: 13px;
   background-color: #68e9ff;
   border-radius: 18px;
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,33 +74,7 @@
   font-family: "SF Pro Display-Bold", Helvetica;
   font-weight: 700;
   color: #000000;
-  font-size: 16px;<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="globals.css" />
-<link rel="stylesheet" href="style.css" />
-<title>HomePL</title>
-</head>
-<body>
-<div class="rectangle">
-<p class="img">
-<img src="https://gifdb.com/images/high/cute-wave-emoji-hand-59s88kk0zj3xho40.gif" style="width:150px;" alt="я джифка">
-</p>
-<div class="overlap">
-<p class="home-PL">Добро пожаловать в HomePL —&nbsp;&nbsp;вашего помощника в поиске жилья!</p>
-<p class="text-wrapper">
-Начнём с создания вашего поискового профиля. Это не займет много времени, и вы быстро получите доступ к списку
-объявлений, соответствующих вашим потребностям.
-</p>
-</div>
-<div class="overlap-group">
-<button class="search-button">Добавить новый поиск</button>
-</div>
-<div class="div-2"></div>
-</div>
-<script s
+  font-size: 16px;
   letter-spacing: 0.32px;
   background: none;
   border: none;
@@ -104,6 +84,21 @@
 
 .rectangle .search-button:hover {
   background-color: #56c8e8;
+
+}
+
+.rectangle .div {
+  width: 252px;
+  top: 17px;
+  left: 56px;
+  font-family: "SF Pro Display-Bold", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0.32px;
+  position: absolute;
+  text-align: center;
+  line-height: normal;
 }
 
 .rectangle .div-2 {
