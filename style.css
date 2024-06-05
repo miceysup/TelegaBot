@@ -1,8 +1,24 @@
+/* CSS Reset для устранения стандартных отступов и полей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .rectangle {
   position: relative;
-  width: 1980px;
-  height: 1280px;
+  width: 390px;
+  height: 844px;
   background-color: #213141;
+  margin: 0 auto; /* Центрирует контейнер */
 }
 
 .rectangle .img {
@@ -10,11 +26,6 @@
   top: 330px;
   left: 100px;
 }
-
-.rectangle .img{
-  position: relative;
-  top: 330px;
-  left: 100px;}
 
 .rectangle .overlap {
   position: absolute;
@@ -62,7 +73,6 @@
   left: 13px;
   background-color: #68e9ff;
   border-radius: 18px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,21 +94,6 @@
 
 .rectangle .search-button:hover {
   background-color: #56c8e8;
-
-}
-
-.rectangle .div {
-  width: 252px;
-  top: 17px;
-  left: 56px;
-  font-family: "SF Pro Display-Bold", Helvetica;
-  font-weight: 700;
-  color: #000000;
-  font-size: 16px;
-  letter-spacing: 0.32px;
-  position: absolute;
-  text-align: center;
-  line-height: normal;
 }
 
 .rectangle .div-2 {
