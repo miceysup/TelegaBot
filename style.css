@@ -10,15 +10,19 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden; /* Убираем скроллинг */
+  background-color: #213141;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #213141;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
 }
 
 .rectangle {
@@ -31,9 +35,9 @@ body {
 }
 
 .rectangle .img {
-  position: relative;
-  top: 300px;
-  left: 78%;
+  position: absolute;
+  top: 330px;
+  left: 50%;
   transform: translateX(-50%);
 }
 
@@ -41,7 +45,7 @@ body {
   position: absolute;
   width: 348px;
   height: 175px;
-  top: 470px;
+  top: 500px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -63,7 +67,7 @@ body {
 
 .rectangle .text-wrapper {
   width: 348px;
-  top: 85px;
+  top: 89px;
   left: 0;
   -webkit-text-stroke: 1px transparent;
   font-family: "Droid Sans-Regular", Helvetica;
@@ -80,7 +84,7 @@ body {
   position: absolute;
   width: 364px;
   height: 56px;
-  top: 730px;
+  top: 753px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #68e9ff;
@@ -91,6 +95,7 @@ body {
 }
 
 .rectangle .search-button {
+  display: block;
   width: 100%;
   height: 100%;
   font-family: "SF Pro Display-Bold", Helvetica;
@@ -101,7 +106,10 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  text-align: center;
+  line-height: 56px; /* Высота кнопки */
   border-radius: 18px;
+  text-decoration: none; /* Убираем подчеркивание */
 }
 
 .rectangle .search-button:hover {
@@ -110,9 +118,9 @@ body {
 
 .rectangle .div-2 {
   position: absolute;
-  width: 390px;
+  width: 100%;
   height: 4px;
-  top: 700px;
+  top: 713px;
   left: 0;
   background-color: #ffffff;
 }
