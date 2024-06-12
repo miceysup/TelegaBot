@@ -9,45 +9,45 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>В каком городе вы ищете жильё?</h1>
-        <input type="text" id="cityInput" placeholder="Введите название города здесь">
-        <div id="cityButtonsContainer">
-            <button class="city-button">Любой</button>
-            <button class="city-button">Amsterdam</button>
-            <button class="city-button">Rotterdam</button>
-            <button class="city-button">Den Haag</button>
-            <button class="city-button">Utrecht</button>
-            <button class="city-button">Eindhoven</button>
-            <button class="city-button">Nijmegen</button>
-            <button class="city-button">Haarlem</button>
-            <button class="city-button">Breda</button>
-            <button class="city-button">Maastricht</button>
-        </div>
-        <div class="scale-container">
-            <div class="scale scale-low"></div>
-            <div class="scale scale-medium"></div>
-            <div class="scale scale-high"></div>
-        </div>
-        <p>Вы будете получать около <span id="notifications-count">30</span> уведомлений в неделю по выбранным параметрам</p>
-        <button class="button" id="nextButton">Далее</button>
+<div class="container">
+    <h1>В каком городе вы ищете жильё?</h1>
+    <input type="text" id="cityInput" placeholder="Введите название города здесь">
+    <div id="cityButtonsContainer">
+        <button class="city-button">Любой</button>
+        <button class="city-button">Amsterdam</button>
+        <button class="city-button">Rotterdam</button>
+        <button class="city-button">Den Haag</button>
+        <button class="city-button">Utrecht</button>
+        <button class="city-button">Eindhoven</button>
+        <button class="city-button">Nijmegen</button>
+        <button class="city-button">Haarlem</button>
+        <button class="city-button">Breda</button>
+        <button class="city-button">Maastricht</button>
     </div>
-    <script src="next-page.js"></script>
-    <script>
-        // Инициализация Telegram WebApp
-        Telegram.WebApp.ready();
+    <div class="scale-container">
+        <div class="scale scale-low"></div>
+        <div class="scale scale-medium"></div>
+        <div class="scale scale-high"></div>
+    </div>
+    <p>Вы будете получать около <span id="notifications-count">30</span> уведомлений в неделю по выбранным параметрам</p>
+    <button class="button" id="nextButton">Далее</button>
+</div>
+<script src="next-page.js"></script>
+<script>
+    // Инициализация Telegram WebApp
+    Telegram.WebApp.ready();
 
-        // Показ кнопки назад
-        Telegram.WebApp.BackButton.show();
+    // Показ кнопки назад
+    Telegram.WebApp.BackButton.show();
 
-        // Добавление обработчика событий для кнопки назад
-        Telegram.WebApp.BackButton.onClick(() => {
-            window.history.back();
-        });
+    // Добавление обработчика событий для кнопки назад
+    Telegram.WebApp.BackButton.onClick(() => {
+        window.history.back();
+    });
 
-        // Разворачивание WebApp на весь экран
-        Telegram.WebApp.expand();
-    </script>
+    // Разворачивание WebApp на весь экран
+    Telegram.WebApp.expand();
+</script>
 </body>
 </html>
 

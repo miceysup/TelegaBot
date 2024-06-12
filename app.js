@@ -40,7 +40,6 @@ document.getElementById('startButton').addEventListener('click', () => {
 
 Telegram.WebApp.expand(); // Убедимся, что WebApp разворачивается на полный экран
 
-
 // Initialize Telegram Web App
 window.Telegram.WebApp.ready();
 

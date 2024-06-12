@@ -48,27 +48,10 @@ p {
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-top: 15px;
 }
 
 .button:hover {
-    background: #0056b3;
-}
-
-.back-button {
-    background: #68E9FF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-.back-button:hover {
     background: #0056b3;
 }
 
