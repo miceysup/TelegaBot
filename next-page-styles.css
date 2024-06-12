@@ -17,11 +17,12 @@ body {
 }
 
 .container {
-    width: 25%; /* Уменьшенная ширина для мобильных устройств */
-    max-width: 400px; /* Уменьшенная максимальная ширина */
+    width: 90%;
+    max-width: 500px;
     text-align: center;
-    padding: 10px; /* Уменьшенные отступы */
+    padding: 10px;
 }
+
 
 h1 {
     font-size: 24px;
@@ -32,11 +33,12 @@ h1 {
     margin-bottom: 20px;
 }
 
-.container input[type="text"] {
-    width: calc(100% - 20px); /* Обеспечьте отступы внутри контейнера */
-    padding: 10px; /* Уменьшенные отступы */
-    font-size: 14px;
+input {
+    width: calc(100% - 50px);
+    font-family: 'SF Pro Display', sans-serif;
+    padding: 15px;
     text-align: center;
+    font-size: 14px;
     border-radius: 8px;
     border: none;
     margin-bottom: 20px;
@@ -52,19 +54,11 @@ input::placeholder {
 }
 
 .button-container {
-    background: #213141;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 14px; /* Уменьшенный размер шрифта */
-    border-radius: 8px; /* Уменьшенные закругленные углы */
-    cursor: pointer;
-    transition: background 0.3s ease;
-    width: %; /* Полная ширина для адаптивности */
-    align-self: center;
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
-
 
 .city-button {
 
@@ -73,7 +67,7 @@ input::placeholder {
     color: white;
     border: none;
     padding: 10px 15px;
-    font-size: 16x;
+    font-size: 16px;
     border-radius: 18px;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -82,7 +76,6 @@ input::placeholder {
     margin-top: 20px; /* optional */
 
 }
-
 .city-button:hover {
     background: #3b4f61;
 }
@@ -130,12 +123,10 @@ input::placeholder {
     color: white;
     border: none;
     padding: 15px 30px;
-    font-size: 14px; /* Уменьшенный размер шрифта */
+    font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
-    width: 100%; /* Полная ширина для адаптивности */
-    margin-top: 20px;
 }
 
 .next-button:hover {
