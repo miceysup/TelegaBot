@@ -1,0 +1,161 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    background: #213141;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+}
+
+.back-button {
+    background: none;
+    color: #68E9FF;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-button:hover {
+    color: #0056b3;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 20px;
+    background: #2a3f50;
+    color: white;
+    appearance: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input::placeholder {
+    color: #b0b0b0;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.city-button {
+    background: #2a3f50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.city-button:hover {
+    background: #3b4f61;
+}
+
+.city-button.selected {
+    background: #68E9FF;
+}
+
+.scale-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.scale {
+    flex: 1;
+    height: 100%;
+    border-radius: 4px;
+    transition: flex 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    margin: 0 5px;
+    opacity: 0.5;
+}
+
+.scale-low {
+    background: rgba(255, 0, 0, 0.7);
+}
+
+.scale-medium {
+    background: rgba(255, 255, 0, 0.7);
+}
+
+.scale-high {
+    background: rgba(0, 255, 0, 0.7);
+}
+
+.info-text {
+    margin-bottom: 20px;
+}
+
+.next-button {
+    background: #68E9FF;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.next-button:hover {
+    background: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

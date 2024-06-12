@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="globals.css" />
-  <link rel="stylesheet" href="style.css" />
-  <title>HomePL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentPL Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 </head>
 <body>
-<div class="main">
-  <div class="rectangle">
-    <p class="img">
-      <img src="https://gifdb.com/images/high/cute-wave-emoji-hand-59s88kk0zj3xho40.gif" style="width:150px;" alt="я джифка">
-    </p>
-    <div class="overlap">
-      <p class="home-PL">Добро пожаловать в HomePL —&nbsp;&nbsp;вашего помощника в поиске жилья!</p>
-      <p class="text-wrapper">
-        Начнём с создания вашего поискового профиля. Это не займет много времени, и вы быстро получите доступ к списку
-        объявлений, соответствующих вашим потребностям.
-      </p>
+    <div class="container">
+        <div id="animation" class="animation"></div>
+        <div class="content">
+            <h1>Добро пожаловать в RentPL</h1>
+            <p>Начнём с создания вашего поискового профиля. Это не займет много времени, и вы быстро получите доступ к списку объявлений, соответствующих вашим потребностям</p>
+            <button class="button" id="startButton">Добавить новый поиск</button>
+        </div>
     </div>
-    <div class="overlap-group">
-      <a href="nextpage.html" class="search-button">Добавить новый поиск</a>
-    </div>
-    <div class="div-2"></div>
-  </div>
-</div>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script src="app.js"></script>
+     <script>
+        var animation = lottie.loadAnimation({
+            container: document.getElementById('animation'),
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'images/WavingHand.json'
+        });
+
+        document.getElementById('animation').addEventListener('click', () => {
+            animation.goToAndPlay(0, true);
+        });
+
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+    </script>
 </body>
 </html>
+
+
+    
+
+
+
+
+
+
