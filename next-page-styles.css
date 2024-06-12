@@ -17,13 +17,11 @@ body {
 }
 
 .container {
-    width: 25%;
-    max-width: 500px;
+    width: 25%; /* Уменьшенная ширина для мобильных устройств */
+    max-width: 400px; /* Уменьшенная максимальная ширина */
     text-align: center;
-    padding: 20px;
+    padding: 10px; /* Уменьшенные отступы */
 }
-
-
 
 h1 {
     font-size: 24px;
@@ -35,7 +33,7 @@ h1 {
 }
 
 .container input[type="text"] {
-    width: calc(100% - 50px); /* Обеспечьте отступы внутри контейнера */
+    width: calc(100% - 20px); /* Обеспечьте отступы внутри контейнера */
     padding: 10px; /* Уменьшенные отступы */
     font-size: 14px; /* Уменьшенный размер шрифта */
     border-radius: 8px;
@@ -48,34 +46,23 @@ h1 {
     transition: background 0.3s ease;
 }
 
-@media (max-width: 600px) {
-    .container input[type="text"],
-    .city-button,
-    .next-button {
-        width: 100% !important; /* Обеспечить адаптивность ширины */
-        font-size: 14px !important; /* Уменьшить размер шрифта для кнопок и ввода */
-    }
-    .container {
-        padding: 10px !important; /* Уменьшить отступы */
-    }
-}
 input::placeholder {
     color: #b0b0b0;
 }
 
 .button-container {
-    background: #213141; /* хуй */
+    background: #213141;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 111px;
-    border-radius: 18px;
+    font-size: 14px; /* Уменьшенный размер шрифта */
+    border-radius: 8px; /* Уменьшенные закругленные углы */
     cursor: pointer;
     transition: background 0.3s ease;
-    width: 110px;
-    align-self: center; /* changed */
-    margin-top: 20px; /* optional */
+    align-self: center;
+    margin-top: 20px;
 }
+
 
 .city-button {
 
@@ -141,32 +128,14 @@ input::placeholder {
     color: white;
     border: none;
     padding: 15px 30px;
-    font-size: 16px;
+    font-size: 14px; /* Уменьшенный размер шрифта */
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
+    width: 100%; /* Полная ширина для адаптивности */
     margin-top: 20px;
 }
 
 .next-button:hover {
     background: #0056b3;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
