@@ -35,7 +35,8 @@ h1 {
 .container input[type="text"] {
     width: calc(100% - 20px); /* Обеспечьте отступы внутри контейнера */
     padding: 10px; /* Уменьшенные отступы */
-    font-size: 14px; /* Уменьшенный размер шрифта */
+    font-size: 14px;
+    text-align: center;
     border-radius: 8px;
     border: none;
     margin-bottom: 20px;
@@ -59,6 +60,7 @@ input::placeholder {
     border-radius: 8px; /* Уменьшенные закругленные углы */
     cursor: pointer;
     transition: background 0.3s ease;
+    width: %; /* Полная ширина для адаптивности */
     align-self: center;
     margin-top: 20px;
 }
