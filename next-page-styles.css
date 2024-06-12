@@ -38,7 +38,7 @@ input {
     font-family: 'SF Pro Display', sans-serif;
     padding: 15px;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 8px;
     border: none;
     margin-bottom: 20px;
@@ -67,11 +67,11 @@ input::placeholder {
     color: white;
     border: none;
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 16x;
     border-radius: 18px;
     cursor: pointer;
     transition: background 0.3s ease;
-    width: 100px;
+    width: 120px;
     align-self: center; /* changed */
     margin-top: 20px; /* optional */
 
