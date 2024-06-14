@@ -1,0 +1,22 @@
+{
+  "cities": [
+    "Warsaw", "Krakow", "Lodz", "Wroclaw", "Poznan", "Gdansk", "Szczecin",
+    "Bydgoszcz", "Lublin", "Katowice", "Bialystok", "Gdynia", "Czestochowa",
+    "Radom", "Sosnowiec", "Toruń", "Kielce", "Gliwice", "Zabrze", "Bytom",
+    "Bielsko-Biala", "Olsztyn", "Rzeszow", "Ruda Slaska", "Rybnik", "Zielona Gora",
+    "Tychy", "Gorzow Wielkopolski", "Dabrowa Gornicza", "Elblag", "Pila",
+    "Opole", "Plock", "Walbrzych", "Wloclawek", "Tarnow", "Chorzow", "Koszalin",
+    "Kalisz", "Legnica", "Grudziadz", "Jaworzno", "Siedlce", "Nowy Sacz",
+    "Jastrzebie-Zdroj", "Sopot", "Myslowice", "Siemianowice Slaskie", "Ostrow Wielkopolski",
+    "Zamosc", "Leszno", "Lubin", "Pruszkow", "Ostroleka", "Stargard", "Pabianice",
+    "Suwalki", "Stalowa Wola", "Kedzierzyn-Kozle", "Tomaszow Mazowiecki", "Przemysl",
+    "Gniezno", "Inowroclaw", "Kutno", "Swidnica", "Ciechanow", "Minsk Mazowiecki",
+    "Otwock", "Jaroslaw", "Chelm", "Zyrardow", "Biala Podlaska", "Olkusz",
+    "Belchatow", "Wodzislaw Slaski", "Malbork", "Kwidzyn", "Boleslawiec", "Skarzysko-Kamienna",
+    "Sanok", "Swiebodzin", "Srem", "Sieradz", "Hajnowka", "Tarnobrzeg",
+    "Zabki", "Koscian", "Lukow", "Wagrowiec", "Miedzyrzecz", "Olesnica",
+    "Zlotow", "Lubliniec", "Strzelce Opolskie", "Gryfino", "Nowa Sol",
+    "Lubartow", "Turek", "Myslenice", "Kolobrzeg", "Debica", "Krasnik",
+    "Pulawy", "Swarzędz", "Wejherowo", "Ostrowiec Swietokrzyski"
+  ]
+}

@@ -3,85 +3,91 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-}
-
-body {
+    background: #1C2733;
     font-family: 'SF Pro Display', sans-serif;
-    background: #213141;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
     color: white;
 }
 
 .container {
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+    padding-top: 20px; /* Устанавливаем начальный отступ сверху */
 }
-
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 35px;
-}
-
-.input-container {
-    margin-bottom: 20px;
-}
-
-input {
-    width: calc(100% - 50px);
-    font-family: 'SF Pro Display', sans-serif;
-    padding: 15px;
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
     text-align: center;
+}
+
+.city-input {
+    font-family: 'SF Pro Display', sans-serif;
+    width: 85%; /* Ширина поля ввода */
+    text-align: center;
+    max-width: 500px; /* Максимальная ширина, чтобы не выходить за границы экрана */
+    padding: 10px;
     font-size: 16px;
+    margin-bottom: 20px;
     border-radius: 8px;
     border: none;
-    margin-bottom: 20px;
-    background: #2a3f50;
+    background-color: #2A3B4A;
     color: white;
-    appearance: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
 }
 
-input::placeholder {
-    color: #b0b0b0;
+.results-container {
+    display: none; /* Изначально скрыт */
+    font-family: 'SF Pro Display', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    margin-top: -18px;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #2A3B4A;
+    color: white;
+    width: 32%; /* Ширина контейнера */
+    max-width: 500px; /* Максимальная ширина, чтобы не выходить за границы экрана */
+    margin-bottom: 10px;
+
 }
 
-.button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+.city-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Уменьшаем отступы между кнопками */
+    margin-bottom: 20px;
+    width: 90%; /* Устанавливаем ширину контейнера с кнопками */
+    max-width: 500px; /* Максимальная ширина, чтобы не выходить за границы экрана */
 }
 
 .city-button {
-
-    background: #2a3f50;
+    background: #2A3B4A;
     font-family: 'SF Pro Display', sans-serif;
     color: white;
     border: none;
-    padding: 10px 15px;
-    font-size: 16x;
-    border-radius: 18px;
+    padding: 10px 0; /* Уменьшаем высоту кнопок */
+    font-size: 14px; /* Немного уменьшаем размер шрифта */
+    border-radius: 8px; /* Уменьшаем радиус скругления */
     cursor: pointer;
-    transition: background 0.3s ease;
-    width: 120px;
-    align-self: center; /* changed */
-    margin-top: 20px; /* optional */
-
-}
-.city-button:hover {
-    background: #3b4f61;
+    transition: background 0.3s ease, transform 0.2s ease; /* Добавляем плавный переход */
+    text-align: center;
 }
 
-.city-button.selected {
-    background: #68E9FF;
+.city-button.wide {
+    grid-column: span 3;
+}
+
+.city-button:hover, .city-button.selected {
+    background: #58D3F7; /* Немного изменяем оттенок активной кнопки */
+    color: #0C0E13;
+    transform: scale(1.05); /* Добавляем легкое увеличение при наведении */
 }
 
 .scale-container {
@@ -89,17 +95,23 @@ input::placeholder {
     justify-content: space-between;
     align-items: center;
     height: 10px;
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin: 10px 0; /* Уменьшаем верхний и нижний отступ */
+    width: 90%;
+    max-width: 500px; /* Максимальная ширина, чтобы не выходить за границы экрана */
 }
 
 .scale {
     flex: 1;
-    height: 100%;
-    border-radius: 4px;
-    transition: flex 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    height: 10px;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out, flex 0.5s ease-in-out;
     margin: 0 5px;
-    opacity: 0.5;
+    opacity: 0.3; /* Пониженная яркость по умолчанию */
+    background: gray; /* Серый цвет по умолчанию */
+}
+
+.scale.selected {
+    opacity: 1; /* Повышенная яркость для выбранного элемента */
 }
 
 .scale-low {
@@ -114,21 +126,12 @@ input::placeholder {
     background: rgba(0, 255, 0, 0.7);
 }
 
-.info-text {
-    margin-bottom: 20px;
-}
-
-.next-button {
-    background: #68E9FF;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.next-button:hover {
-    background: #0056b3;
+#notificationCount {
+    margin-top: 5px; /* Уменьшаем верхний отступ */
+    margin-bottom: 10px; /* Уменьшаем нижний отступ */
+    font-size: 12px; /* Уменьшаем размер шрифта */
+    text-align: left; /* Выравнивание текста по левому краю */
+    color: rgba(255, 255, 255, 0.6); /* Делаем текст более тусклым */
+    width: 90%; /* Устанавливаем ширину текста */
+    max-width: 500px; /* Максимальная ширина, чтобы не выходить за границы экрана */
 }

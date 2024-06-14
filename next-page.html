@@ -1,55 +1,36 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RentPL - Выбор города</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Выберите город</title>
     <link rel="stylesheet" href="next-page-styles.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="next-page.js" defer></script>
 </head>
 <body>
 <div class="container">
     <h1>В каком городе вы ищете жильё?</h1>
-    <input type="text" id="cityInput" placeholder="Введите название города здесь">
-    <div id="cityButtonsContainer">
-        <button class="city-button">Любой</button>
-        <button class="city-button">Варшава</button>
-        <button class="city-button">Лодзь</button>
-        <button class="city-button">Краков</button>
-        <button class="city-button">Вроцьлав</button>
-        <button class="city-button">Катовице</button>
-        </div>
+    <input type="text" placeholder="Введите название города здесь" class="city-input" id="city-input">
+    <div class="results-container" id="results-container"></div>
+    <div class="city-buttons">
+        <button class="city-button wide">Любой</button>
+        <button class="city-button">Warsaw</button>
+        <button class="city-button">Krakow</button>
+        <button class="city-button">Gdansk</button>
+        <button class="city-button">Poznan</button>
+        <button class="city-button">Wroclaw</button>
+        <button class="city-button">Lublin</button>
+        <button class="city-button">Sopot</button>
+        <button class="city-button">Lodz</button>
+        <button class="city-button">Szczecin</button>
+    </div>
     <div class="scale-container">
         <div class="scale scale-low"></div>
         <div class="scale scale-medium"></div>
         <div class="scale scale-high"></div>
     </div>
-    <p>Вы будете получать около <span id="notifications-count">30</span> уведомлений в неделю по выбранным параметрам</p>
-    <button class="button" id="nextButton">Далее</button>
+    <p id="notificationCount">Вы будете получать около 99 уведомлений в неделю по выбранным параметрам</p>
 </div>
-<script src="next-page.js"></script>
-<script>
-    // Инициализация Telegram WebApp
-    Telegram.WebApp.ready();
-
-    // Показ кнопки назад
-    Telegram.WebApp.BackButton.show();
-
-    // Добавление обработчика событий для кнопки назад
-    Telegram.WebApp.BackButton.onClick(() => {
-        window.history.back();
-    });
-
-    // Разворачивание WebApp на весь экран
-    Telegram.WebApp.expand();
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
