@@ -5,18 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const highBar = document.querySelector('.scale-high');
     const notificationText = document.getElementById('notificationCount');
     const cityInput = document.querySelector('.city-input');
+    const suggestionsContainer = document.querySelector('.suggestions');
     const mainButton = Telegram.WebApp.MainButton;
     const container = document.querySelector('.container');
-    const resultsContainer = document.getElementById('results-container');
     let cities = [];
 
-    // Load the list of cities from the cities.json file
     fetch('cities.json')
         .then(response => response.json())
-        .then(data => {
-            cities = data;
-            setupAutocomplete(cityInput, cities);
-        });
+        .then(data => cities = data.cities);
 
     cityButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -25,23 +21,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const city = button.textContent;
             updateNotificationCount(city);
+            hideSuggestions();
         });
     });
 
     cityInput.addEventListener('input', () => {
         cityButtons.forEach(btn => btn.classList.remove('selected'));
+        const query = cityInput.value.toLowerCase();
+        const filteredCities = cities.filter(city => city.toLowerCase().startsWith(query));
+        showSuggestions(filteredCities);
         updateNotificationCount(cityInput.value);
-        showResults(cityInput.value);
     });
 
     cityInput.addEventListener('focus', () => {
-        container.style.paddingTop = '20px'; // Устанавливаем одинаковый отступ сверху при фокусировке
+        container.style.paddingTop = '20px';
         mainButton.show();
     });
 
     function updateNotificationCount(city) {
         resetScales();
         let notificationCount;
+
         if (city === 'Любой') {
             highBar.classList.add('selected');
             highBar.style.flex = '3';
@@ -54,12 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
             highBar.style.flex = '1';
             lowBar.style.flex = '1';
             notificationCount = 80;
-        } else {
+        } else if (cities.includes(city)) {
             lowBar.classList.add('selected');
             lowBar.style.flex = '3';
             mediumBar.style.flex = '1';
             highBar.style.flex = '1';
             notificationCount = 30;
+        } else {
+            notificationCount = 0;
         }
 
         notificationText.textContent = `Вы будете получать около ${notificationCount} уведомлений в неделю по выбранным параметрам`;
@@ -73,32 +75,28 @@ document.addEventListener('DOMContentLoaded', () => {
         highBar.style.flex = '1';
     }
 
-    function showResults(query) {
-        if (query.trim().length > 0) {
-            resultsContainer.style.display = 'block';
-            resultsContainer.innerHTML = `<p>Ищем жильё в городе: ${query}</p>`;
+    function showSuggestions(filteredCities) {
+        suggestionsContainer.innerHTML = '';
+        if (filteredCities.length > 0) {
+            filteredCities.forEach(city => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.textContent = city;
+                suggestionItem.classList.add('suggestion-item');
+                suggestionItem.addEventListener('click', () => {
+                    cityInput.value = city;
+                    updateNotificationCount(city);
+                    hideSuggestions();
+                });
+                suggestionsContainer.appendChild(suggestionItem);
+            });
+            suggestionsContainer.style.display = 'block';
         } else {
-            resultsContainer.style.display = 'none';
-            resultsContainer.innerHTML = '';
+            hideSuggestions();
         }
     }
 
-    function setupAutocomplete(input, cities) {
-        input.addEventListener('input', function() {
-            const value = this.value.toLowerCase();
-            const suggestions = cities.filter(city => city.toLowerCase().includes(value));
-            showSuggestions(suggestions);
-        });
-    }
-
-    function showSuggestions(suggestions) {
-        if (suggestions.length > 0) {
-            resultsContainer.style.display = 'block';
-            resultsContainer.innerHTML = suggestions.map(suggestion => `<p>${suggestion}</p>`).join('');
-        } else {
-            resultsContainer.style.display = 'none';
-            resultsContainer.innerHTML = '';
-        }
+    function hideSuggestions() {
+        suggestionsContainer.style.display = 'none';
     }
 
     Telegram.WebApp.expand();
